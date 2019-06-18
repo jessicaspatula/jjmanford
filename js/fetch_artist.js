@@ -1,9 +1,9 @@
-var myco = "http://mycolectronic.com/";
+var myco = "https://mycolectronic.com/";
 var fetch_artist = function(info_type, page_loc){
 
 	const request = new XMLHttpRequest();
 
-	url ='http://mycolectronic.com/artist_api/'+info_type+'/index.php';  
+	url ='https://mycolectronic.com/artist_api/'+info_type+'/index.php';  
 	request.open('GET',url );
 	request.send(); 
 	request.onload = () => {
