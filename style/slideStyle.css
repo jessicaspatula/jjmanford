@@ -1,0 +1,120 @@
+body{
+	background-color:#ffffff;
+	background-image: url('bg3.jpg');
+	background-repeat:no-repeat;
+    	background-position:top center; 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666;
+}
+
+
+
+
+a:link {color:#fff; text-decoration: none; font-weight: normal;}      
+a:visited {color:#fff; text-decoration: none; font-weight: normal;}  
+a:hover {color:#666; text-decoration: none; font-weight: normal;}  
+a:active {color:#ffffff; text-decoration: none; font-weight: normal;}  
+
+
+
+
+
+#bottom{    
+        position: absolute;
+        top:6750px;
+        text-align: right;
+}
+
+#menubar{
+color: #666;	
+background-color:#999;
+    position: fixed;
+    top:7px;
+    right: 15px;
+    text-align: right;
+	font-size: 30px;
+	padding: 5px;
+	margin:0px;
+	margin-right: 30px;
+    font-weight: bolder;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+-moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #bbb;
+	z-index:1;
+}
+
+#portfolio{ 
+	   
+        position: relative;
+        top:1615px;
+        z-index:-1;
+        text-align:center;
+        
+}
+
+
+
+portfolio{
+z-index: -1;
+
+}
+
+#portlinkhack{
+        position: absolute;
+        top:1605px;
+}
+
+#port{ 
+   
+        position: absolute;
+        top:1605px;
+      
+}
+
+#jj {
+        position: relative;
+        top:30px;
+}
+
+#cv{    
+        position: absolute;
+        top:3956px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	line-height: 99% ;
+	z-index:-1;
+}
+
+#cv h1, h2{
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 160%;
+	color: #666666;
+	
+
+}
+
+#edu, #cura {
+	text-align:top;
+	padding: 25px 40px;
+
+}
+
+#cvheader {
+	z-index:-1;
+	text-align: left;
+	padding: 10px 40px;
+}
+
+#cvtbl h2 {
+	line-height:40%;
+}
+
+#cvlink a:link {color:#666; text-decoration: none; font-weight: normal;}      
+#cvlink a:visited {color:#666; text-decoration: none; font-weight: normal;}  
+#cvlink a:hover {color:#666; text-decoration: none; font-weight: normal;}  
+#cvlink a:active {color:#666; text-decoration: none; font-weight: normal;} 
