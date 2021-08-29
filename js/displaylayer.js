@@ -21,7 +21,7 @@ function randbg(){
    if(bae.readyState == 4) 
    respy(bae.responseText);   
   };
-  bae.open("POST", "https://mycolectronic.com/artist_api/randBG.php", true); 
+  bae.open("POST", "https://jjmanford.online/artist_api/randBG.php", true); 
   bae.send((pageHeight()-35)+'-'+pageWidth());
 }
  
