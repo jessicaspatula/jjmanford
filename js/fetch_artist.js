@@ -1,4 +1,4 @@
-var myco = "https://jjmanford.online/";
+var bucket = "https://jjmanford.s3.amazonaws.com";
 var fetch_artist = function(info_type, page_loc){
 
 	const request = new XMLHttpRequest();
@@ -103,8 +103,8 @@ var run_thumb = function(yr_paintings, yr_int, feature_div){
 	var thumbLink, thumbImg;
 	yr_paintings.forEach( 
 		function( one_painting){
-			href =     myco+"/Images/JJ/"+ one_painting.filename ;
-			thumbSrc = myco+"/Images/JJ/thumbs/tag_"+one_painting.filename
+			href =     bucket+"/"+ one_painting.filename ;
+			thumbSrc = bucket+"/thumbs/tag_"+one_painting.filename
 			caption = setCaption(one_painting);
 
 	   		one_thumb += "<a ";
