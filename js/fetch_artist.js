@@ -18,6 +18,7 @@ var fetch_artist = function(info_type, page_loc){
 }
 
 var format_artist = function(info_type,div_id,artist_json){
+	console.log(artist_json);
 	switch(info_type){
 		case 'painting':
 			place_paintings(artist_json,div_id);
