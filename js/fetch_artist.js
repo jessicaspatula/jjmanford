@@ -3,15 +3,15 @@ var fetch_artist = function(info_type, page_loc){
 
 	const request = new XMLHttpRequest();
 
-	url ='https://jjmanford.online/artist_api/'+info_type+'/index.php';  
+	url ='https://156.67.72.52/artist_api/'+info_type+'/index.php';
 	request.open('GET',url );
-	request.send(); 
+	request.send();
 	request.onload = () => {
 		if (request.status === 200) {
 		   format_artist(info_type,page_loc,JSON.parse(request.response));
-		} 
+		}
 	};
- 
+
 	request.onerror = () => {
 	   console.log("error")
 	};
@@ -43,36 +43,36 @@ var format_artist = function(info_type,div_id,artist_json){
 var place_profile = function(profile, div_id){
 	pro = "";
 	pro += "<img src=\""+profile.avatar +"\" id=\"jjpic\" />";
-	pro += "<div id=\"contacttext\"><p>";  
+	pro += "<div id=\"contacttext\"><p>";
 	pro += " <a href=\"mailto:"+profile.email+"\">";
-	pro += " <i class=\"fa fa-envelope-o\"></i> " + profile.email; 
-	pro += "</a>";  
-	pro +=	" <br>" + 
+	pro += " <i class=\"fa fa-envelope-o\"></i> " + profile.email;
+	pro += "</a>";
+	pro +=	" <br>" +
 		" <i class=\"fa fa-phone\"></i>  "+ profile.phone;
-	pro +=	"<br>" + 
+	pro +=	"<br>" +
 		" <a href=\""+profile.instagram+"\">"+
-			"<i class=\"fa fa-instagram\"></i> Follow JJ</a><br>" + 
+			"<i class=\"fa fa-instagram\"></i> Follow JJ</a><br>" +
 		" <a href=\"#box2\" class=\"link press_item\">"+
-			"<i class=\"fa fa-paint-brush\"></i> View JJ's Portfolio </a> " + 
-	     "</p>" + 
+			"<i class=\"fa fa-paint-brush\"></i> View JJ's Portfolio </a> " +
+	     "</p>" +
 	    " <p id=\"aboutjj\">"+profile.bio+" </p> ";
 	pro += "</div>";
-	soloDiv = document.getElementById(div_id); 
-	soloDiv.innerHTML = pro;   
+	soloDiv = document.getElementById(div_id);
+	soloDiv.innerHTML = pro;
 
 };
 
 var place_paintings = function(paintings, div_id){
 	var album = albumize(paintings,'year');
-	//var currentDiv = document.getElementById(div_id); 
-	var currentDiv = document.getElementsByClassName("gallereee")[0]; 
+	//var currentDiv = document.getElementById(div_id);
+	var currentDiv = document.getElementsByClassName("gallereee")[0];
 	var thumb_menu = "";
 	var one_menu = "";
-	var htmlAlbums = [];	
+	var htmlAlbums = [];
 	Object.keys(album).forEach(function (feature_group) {
 		one_menu = "";
-		var newDiv = document.createElement("_"+feature_group); 
-		currentDiv.appendChild(newDiv);  
+		var newDiv = document.createElement("_"+feature_group);
+		currentDiv.appendChild(newDiv);
 		one_menu += "<div class=\"centered_thumbs\" id=\"_"+feature_group+"\"><center>";
 		one_menu += run_thumb(album[feature_group], feature_group, newDiv);
 		one_menu += "</center></div>";
@@ -83,7 +83,7 @@ var place_paintings = function(paintings, div_id){
 		thumb_menu += one_menu;
 	});
 
-	currentDiv.innerHTML = thumb_menu;   
+	currentDiv.innerHTML = thumb_menu;
 	start_gall();
 }
 
@@ -102,7 +102,7 @@ var run_thumb = function(yr_paintings, yr_int, feature_div){
 	var one_thumb = "";
 	var caption, href, thumbSrc;
 	var thumbLink, thumbImg;
-	yr_paintings.forEach( 
+	yr_paintings.forEach(
 		function( one_painting){
 			href =     bucket+"/"+ one_painting.filename ;
 			thumbSrc = bucket+"/thumbs/tag_"+one_painting.filename
@@ -118,16 +118,16 @@ var run_thumb = function(yr_paintings, yr_int, feature_div){
 		  	 " title=\"\" " +
 	  	  	 " alt=\"\">"+
 	  	  	 " </a>";
-			thumbLink = document.createElement("a"); 
+			thumbLink = document.createElement("a");
 			thumbLink.setAttribute("href",href);
 			thumbLink.setAttribute("data-caption", caption);
-			feature_div.appendChild(thumbLink);  
-			var thumbImg = document.createElement("img"); 
+			feature_div.appendChild(thumbLink);
+			var thumbImg = document.createElement("img");
 			thumbImg.setAttribute("class","portfolio_thumb");
 			thumbImg.setAttribute("src", thumbSrc);
 			thumbImg.setAttribute("title","");
 			thumbImg.setAttribute("alt","");
-			thumbLink.appendChild(thumbImg);  
+			thumbLink.appendChild(thumbImg);
 	});
 	return one_thumb;
 };
@@ -140,7 +140,7 @@ var setCaption = function(p){
 	caption += (p.medium != "")? p.medium + " -  ":"";
 	caption +=     p.year;
 	return caption;
-} 
+}
 
 var place_exhibitions = function(exhibits){
 	var solo_listings = [];	var soloHtml = ""; var soloDiv;
@@ -148,9 +148,9 @@ var place_exhibitions = function(exhibits){
 
 	Object.keys(exhibits).forEach(function (groupType) {
 		if(groupType == "Solo" | groupType == "Two-Person"){
-			solo_listings = solo_listings.concat(exhibits[groupType]);	
+			solo_listings = solo_listings.concat(exhibits[groupType]);
 		}else{
-			group_listings = exhibits[groupType];	
+			group_listings = exhibits[groupType];
 		}
 	});
 
@@ -164,12 +164,12 @@ var place_exhibitions = function(exhibits){
 		groupHtml += formatExhibitDisplay(e);
 	});
 
-	soloDiv = document.getElementById("solo_exhibit"); 
-	groupDiv = document.getElementById("group_exhibit"); 
+	soloDiv = document.getElementById("solo_exhibit");
+	groupDiv = document.getElementById("group_exhibit");
 
-	soloDiv.innerHTML = soloHtml;   
-	groupDiv.innerHTML = groupHtml;   
-	
+	soloDiv.innerHTML = soloHtml;
+	groupDiv.innerHTML = groupHtml;
+
 };
 
 var place_forthcoming_exhibitions = function(es, div_id){
@@ -185,16 +185,16 @@ var place_forthcoming_exhibitions = function(es, div_id){
 	});
 
 
-	if(forthList.length > 0){	
+	if(forthList.length > 0){
 		forthHtml = '<span class=\"subtitle\" >CURRENT & FORTHCOMING EXHIBITIONS</span>';
 		forthHtml += '<p>'
 		forthList.forEach(function(e){
 			forthHtml += formatExhibitDisplay(e);
 		});
 		forthHtml += '</p>'
-	
-		forthDiv = document.getElementById(div_id); 
-		forthDiv.innerHTML = forthHtml;   
+
+		forthDiv = document.getElementById(div_id);
+		forthDiv.innerHTML = forthHtml;
 	}
 
 };
@@ -208,8 +208,8 @@ var place_curatorial = function(cur,div_id){
 		curHtml += formatExhibitDisplay(e);
 	});
 
-	soloDiv = document.getElementById(div_id); 
-	soloDiv.innerHTML = curHtml;   
+	soloDiv = document.getElementById(div_id);
+	soloDiv.innerHTML = curHtml;
 };
 
 var place_press = function(press, div_id){
@@ -217,18 +217,18 @@ var place_press = function(press, div_id){
 	press.forEach(function(p){
 		pressHtml += formatPressDisplay(p);
 	});
-	pressDiv = document.getElementById(div_id); 
-	pressDiv.innerHTML = pressHtml;   
+	pressDiv = document.getElementById(div_id);
+	pressDiv.innerHTML = pressHtml;
 };
-	
+
 var formatPressDisplay = function(p){
 	var l = "<li class=\"press_item\">";
 	l += "<a class=\"press_link\"";
-	l += " href=\""+ p.url + "\" target=\"_blank\" >"; 
-	l += p.title; 
+	l += " href=\""+ p.url + "\" target=\"_blank\" >";
+	l += p.title;
 	l += "</a> ";
-	if(p.publish_date != "0000-00-00" & p.publish_date != null){ 
-		l += "("+formatDate(p.publish_date)+")" ; 
+	if(p.publish_date != "0000-00-00" & p.publish_date != null){
+		l += "("+formatDate(p.publish_date)+")" ;
 	}
 	l += "</li> ";
 	return l;
@@ -237,24 +237,24 @@ var formatPressDisplay = function(p){
 var formatExhibitDisplay = function(exhibit){
 	var l = "<li class=\"exhibit_item\">";
 	l += "<span class=\"exhibit_title\">";
-	l += exhibit.title; 
+	l += exhibit.title;
 	l += "</span> ";
-	
-	if(exhibit.description != "" & exhibit.description != null){ 
+
+	if(exhibit.description != "" & exhibit.description != null){
 		l += exhibit.description + ", ";
 	}
 
 
-	if(exhibit.gallery != "" & exhibit.gallery != null){ 
+	if(exhibit.gallery != "" & exhibit.gallery != null){
 		l += exhibit.gallery + ", ";
 	}
 	l+= exhibit_link_html(exhibit);
 
-	if(exhibit.location != "" & exhibit.location != null){ 
+	if(exhibit.location != "" & exhibit.location != null){
 		l += exhibit.location + " ";
 	}
-	if(exhibit.end_date != "0000-00-00" & exhibit.end_date != null){ 
-		l += "("+formatDate(exhibit.end_date)+")" ; 
+	if(exhibit.end_date != "0000-00-00" & exhibit.end_date != null){
+		l += "("+formatDate(exhibit.end_date)+")" ;
 	}
 	l += "</li>";
 	return l;
@@ -267,24 +267,24 @@ var exhibit_link_html = function(e){
 	// type: exhibit
 		h += " <a target=\"_blank\" class=\"cvlink\" href=\""+e.exhibition_link + "\">";
 		if(e.link_text != "" & e.link_text != null){
-			h += "<br>"+ e.link_text ;	
+			h += "<br>"+ e.link_text ;
 		}else{
 			h +=    "<i class=\"fa fa-external-link\" aria-hidden=\"true\"></i> "+
-				"<span class=\"sr-only\"> (link) </span> ";	
+				"<span class=\"sr-only\"> (link) </span> ";
 		}
 		h += "</a> ";
 	}else if(e.hasOwnProperty("curatorial_link") & ((e.curatorial_link != "" & e.curatorial_link != null))  ){
 	// type: curatorial
 		h += " <a target=\"_blank\" class=\"curlink\"  href=\""+e.curatorial_link + "\">";
 		if(e.link_text != "" & e.link_text != null){
-			h += "<br>"+e.link_text;	
+			h += "<br>"+e.link_text;
 		}else{
-		h += "<i class=\"fa fa-external-link\" aria-hidden=\"true\"></i> <span class=\"sr-only\"> (link) </span> ";	
+		h += "<i class=\"fa fa-external-link\" aria-hidden=\"true\"></i> <span class=\"sr-only\"> (link) </span> ";
 		}
 		h += "</a> ";
 	}
 
-	return h;	
+	return h;
 };
 
 var formatDate = function(d){
