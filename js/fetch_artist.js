@@ -151,7 +151,7 @@ var place_exhibitions = function(exhibits){
 			solo_listings = solo_listings.concat(exhibits[groupType]);
 		}else{
             /* Two-Person displayed with Group */
-			group_listings = exhibits[groupType];
+			group_listings = group_listings.concat(exhibits[groupType]);
 		}
 	});
 
