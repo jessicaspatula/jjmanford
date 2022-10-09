@@ -147,9 +147,10 @@ var place_exhibitions = function(exhibits){
 	var group_listings = []; var groupHtml = ""; var groupDiv;
 
 	Object.keys(exhibits).forEach(function (groupType) {
-		if(groupType == "Solo" | groupType == "Two-Person"){
+		if(groupType == "Solo" ){
 			solo_listings = solo_listings.concat(exhibits[groupType]);
 		}else{
+            /* Two-Person displayed with Group */
 			group_listings = exhibits[groupType];
 		}
 	});
@@ -254,7 +255,7 @@ var formatExhibitDisplay = function(exhibit){
 		l += exhibit.location + " ";
 	}
 	if(exhibit.end_date != "0000-00-00" & exhibit.end_date != null){
-		l += "("+formatDate(exhibit.end_date)+")" ;
+		l += " "+formatDate(exhibit.end_date)+" " ;
 	}
 	l += "</li>";
 	return l;

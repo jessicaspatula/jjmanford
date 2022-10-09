@@ -118,7 +118,7 @@ p #edu , p #cura  {
 }
 
 #cv h1, h2{
-	font-size: 160%;
+	font-size: 140%;
 	color: #666666;
 }
 
@@ -133,7 +133,6 @@ p #edu , p #cura  {
 
 .exhibit_title, .exhibit_title a{
 	font-style: oblique;
-	font-weight: bolder;
 	color: #000;
 }
 
