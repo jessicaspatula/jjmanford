@@ -21,7 +21,7 @@ function randbg(){
    if(bae.readyState == 4)
    respy(bae.responseText);
   };
-  bae.open("POST", "https://jjmanford.click/artist_api/randBG.php", true);
+  bae.open("POST", "https://jjmanfrd.click/artist_api/randBG.php", true);
   bae.send((pageHeight()-35)+'-'+pageWidth());
 }
 

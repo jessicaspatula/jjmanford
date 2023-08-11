@@ -3,7 +3,7 @@ var fetch_artist = function(info_type, page_loc){
 
 	const request = new XMLHttpRequest();
 
-	url ='https://jjmanford.click/artist_api/'+info_type+'/index.php';
+	url ='https://jjmanfrd.click/artist_api/'+info_type+'/index.php';
 	request.open('GET',url );
 	request.send();
 	request.onload = () => {
