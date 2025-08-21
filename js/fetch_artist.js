@@ -1,4 +1,4 @@
-var bucket = "https://jjmanford.s3.amazonaws.com";
+var bucket = "https://raw.githubusercontent.com/jessicaspatula/jjimages/refs/heads/master/";
 var fetch_artist = function(info_type, page_loc){
 
 	const request = new XMLHttpRequest();
