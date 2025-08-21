@@ -43,19 +43,17 @@ var format_artist = function(info_type,div_id,artist_json){
 var place_profile = function(profile, div_id){
 	pro = "";
 	pro += "<img src=\""+profile.avatar +"\" id=\"jjpic\" />";
-	pro += "<div id=\"contacttext\"><p>";
-	pro += " <a href=\"mailto:"+profile.email+"\">";
+	pro += "<div id=\"contacttext\">";
+    pro += "<p id=\"aboutjj\">"+profile.bio+" </p> ";
+	pro += "<p><a href=\"mailto:"+profile.email+"\">";
 	pro += " <i class=\"fa fa-envelope-o\"></i> " + profile.email;
 	pro += "</a>";
 	pro +=	" <br>" +
 		" <i class=\"fa fa-phone\"></i>  "+ profile.phone;
 	pro +=	"<br>" +
 		" <a href=\""+profile.instagram+"\">"+
-			"<i class=\"fa fa-instagram\"></i> Follow JJ</a><br>" +
-		" <a href=\"#box2\" class=\"link press_item\">"+
-			"<i class=\"fa fa-paint-brush\"></i> View JJ's Portfolio </a> " +
-	     "</p>" +
-	    " <p id=\"aboutjj\">"+profile.bio+" </p> ";
+			"<i class=\"fa fa-instagram\"></i></a><br>" +
+	     "</p>" ;
 	pro += "</div>";
 	soloDiv = document.getElementById(div_id);
 	soloDiv.innerHTML = pro;
