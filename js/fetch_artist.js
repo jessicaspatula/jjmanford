@@ -42,15 +42,15 @@ var format_artist = function(info_type,div_id,artist_json){
 
 var place_profile = function(profile, div_id){
 	pro = "";
-	pro += "<img src=\""+profile.avatar +"\" id=\"jjpic\" />";
+	pro += "<img src=\""+profile.avatar +"\" id=\"jjpic\" /><br /><br />";
 	pro += "<div id=\"contacttext\">";
     pro += "<p id=\"aboutjj\">"+profile.bio+" </p> ";
 	pro += "<p><a href=\"mailto:"+profile.email+"\">";
 	pro += " <i class=\"fa fa-envelope-o\"></i> " + profile.email;
 	pro += "</a>";
-	pro +=	" <br>" +
+	pro +=	" <br />" +
 		" <i class=\"fa fa-phone\"></i>  "+ profile.phone;
-	pro +=	"<br>" +
+	pro +=	"<br />" +
 		" <a href=\""+profile.instagram+"\">"+
 			"<i class=\"fa fa-instagram\"></i></a><br>" +
 	     "</p>" ;
