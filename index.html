@@ -32,7 +32,10 @@
 		get_profile('contact');
 		get_press('press');
 		
-		$("#box2").fadeIn(900);        
+		$("#box2").fadeIn(900);
+		
+		// Scroll to box2 on page load
+		$('#wrapper').scrollTo('#box2', 0);
 		
 	});
 	var start_gall = function() {
@@ -57,7 +60,7 @@
 	<div id="header">
 	<h1 id="logo">JJ Manford</h1>
       	<ul id="menu">
-           <li><a href="#box2" class="link"><i class="fa fa-paint-brush"></i> <span class="jjlongname">Portfolio</span> </a></li>
+           <li><a href="#box2" class="link"><i class="fa fa-paint-brush"></i> <span class="jjlongname"></span> </a></li>
 	   <li><a href="#box5" class="link"><i class="fa fa-bullhorn"></i><span class="sr-only">News</span></a></li>
 	   <li><a href="#box3" class="link"><i class="fa fa-university"></i><span class="sr-only">CV</span></a></li>
            <li><a href="#box8" class="link"><i class="fa fa-envelope"></i><span class="sr-only">Contact</span></a></li>
